@@ -1,20 +1,47 @@
+# S.xml
+
+<Sv desc="hahahaha">
+    <dS im="java">
+		<prop dName="Oracle" pwd="********"/>
+	</dS>
+    <dS im="python">
+		<prop1 dName="MySQL" pwd="********"/>
+	</dS>
+
 # Read the key value pairs from xml file
-# https://stackoverflow.com/questions/18509358/how-to-iterate-through-xml-in-powershell
 
-[string] $xmlFilePath= 'C:\Users\X.xml'
+[string] $xmlFilePath= 'C:\Users\S.xml'
 [xml] $xmlContent = [xml] (Get-Content -Path $xmlFilePath)
-[System.Xml.XmlElement] $categories = $xmlContent.Server
-[System.Xml.XmlElement] ${properties.oracle} = $null
+[System.Xml.XmlElement] $categories = $xmlContent.Sv
 
-foreach(${properties.MySQL} in $categories.dS.NextChild2)
+[System.Xml.XmlElement] ${prop} = $null
+[System.Xml.XmlElement] ${prop1} = $null
+
+foreach(${prop} in $categories.dS.FirstChild)
 {
-    [string] $URL = ${properties.MySQL}.URL
-    [string] $password = ${properties.MySQL}.password 
-    [string] $user = ${properties.MySQL}.user 
-    Write-Host ("URL: {0}" -f $URL)
-    Write-Host ("password: {0}" -f $password)
-    Write-Host ("user: {0}" -f $user) "`n"
+    [string] $dName = ${prop}.dName
+    [string] $pwd = ${prop}.pwd
+    Write-Host ("dName: {0}" -f $dName)
+    Write-Host ("pwd: {0}" -f $pwd) "`n"
     break
 }
+
+foreach(${prop1} in $categories.dS.NextChild)
+{
+    [string] $dName = ${prop1}.dName
+    [string] $pwd = ${prop1}.pwd
+    Write-Host ("dName: {0}" -f $dName)
+    Write-Host ("pwd: {0}" -f $pwd) "`n"
+    break
+}
+
+OutPut:
+
+dName: Oracle
+pwd: = ********
+
+dName: MySQL
+pwd: = ********
+
 
 
