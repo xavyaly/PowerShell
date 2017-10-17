@@ -1,0 +1,20 @@
+# Read the key value pairs from xml file
+# https://stackoverflow.com/questions/18509358/how-to-iterate-through-xml-in-powershell
+
+[string] $xmlFilePath= 'C:\Users\X.xml'
+[xml] $xmlContent = [xml] (Get-Content -Path $xmlFilePath)
+[System.Xml.XmlElement] $categories = $xmlContent.Server
+[System.Xml.XmlElement] ${properties.oracle} = $null
+
+foreach(${properties.MySQL} in $categories.dS.NextChild2)
+{
+    [string] $URL = ${properties.MySQL}.URL
+    [string] $password = ${properties.MySQL}.password 
+    [string] $user = ${properties.MySQL}.user 
+    Write-Host ("URL: {0}" -f $URL)
+    Write-Host ("password: {0}" -f $password)
+    Write-Host ("user: {0}" -f $user) "`n"
+    break
+}
+
+
