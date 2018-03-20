@@ -1,0 +1,275 @@
+# profile.ps1: CREATED IN DOCUMENT FOLDER TO CHANG THE DEFAULT WORK LOCATION
+# 
+# Pre-Requisites: Compname, App Name, Userid, Password, URL
+#
+#$URL = "https://ucd.prodlb.travp.net/"
+$URL = "https://ucd-sandbox.dvllb.travp.net/"
+$compName = "BI_SCBP_BIRatingModsUI_Comp"
+#$compName = "BI_BIUP_SCBP_BIRatingModsUI_BIRatingModsEAR_App"
+$compPath = "C:\Users\jalam4\Travelers\Final_Automation\comp"
+cmd /c udclient -username jalam4 -password AbNa@234566 -weburl $URL getComponent -component $compName > $compPath
+$compID = (Get-Content -Path $compPath -Raw) | ConvertFrom-Json 
+$compID.psobject.Properties.Value[16] > $compPath
+$compIDs = Get-Content $compPath
+$compIDs
+#
+#
+$envPropDef = (Get-Content 11172017envName)
+foreach($envPD in $envPropDef) {
+    cmd /c udclient -username jalam4 -password ********* -weburl $URL addEnvironmentProperty -name $envPD -component $compIDs -required true -description $envPD 
+}
+#
+#
+$URL = "https://ucd.prodlb.travp.net/"
+$appName = "BI_BIUP_SCBP_BIRatingModsUI_BIRatingModsEAR_App"
+rm $appPath
+cmd /c udclient -username jalam4 -password ********* -weburl $URL getEnvironment -application $appName -environment MO > $appPath
+$appID = (Get-Content -Path $appPath -Raw) | ConvertFrom-Json 
+$appID.psobject.Properties.Value[8] > $appPath
+$appIDs = Get-Content $appPath
+$appIDs
+#               
+#
+$envPropDef = (Get-Content 11172017envName)
+$a = $envPropDef.Length
+$setCompEnvPro = (Get-Content 11172017envValue)
+if ($envPropDef.Length -eq $setCompEnvPro.Length) { Write-Host "Strings have equal length" }
+for ($i=0; $i -le $a-1; $i++) {
+    Write-Host $envPropDef[$i] => $setCompEnvPro[$i]
+    cmd /c udclient -username jalam4 -password ******* -weburl $URL setComponentEnvironmentProperty -name $envPropDef[$i] -value $setCompEnvPro[$i] -component $compName -environment $appIDs -application $appName
+}
+
+<#
+PS C:\Users\jalam4\Travelers\Final_Automation\udclient\udclient> C:\Users\jalam4\Travelers\Final_Automation\Codes\Final_Testing.ps1
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Operation succeeded.
+Strings have equal length
+env.dataSource.oracle.URL => jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oradawcratmod001.prodlb.travp.net)(PORT=1606)))(CONNECT_DATA=(SERVICE_NAME=epsbdv_oltp)))
+{
+  "id": "15fb799d-5e86-64cd-c07a-91e9844296e2",
+  "name": "env.dataSource.oracle.URL",
+  "value": "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oradawcratmod001.prodlb.travp.net)(PORT=1606)))(CONNECT_DATA=(SERVICE_NAME=epsbdv_oltp)))",
+  "secure": false
+}
+
+env.dataSource.oracle.user => WCRM_APPUSER_LB1
+{
+  "id": "15fb799e-c079-58a2-52a3-fbc88d2dd59f",
+  "name": "env.dataSource.oracle.user",
+  "value": "WCRM_APPUSER_LB1",
+  "secure": false
+}
+
+env.dataSource.oracle.password => WCRMappLB1
+{
+  "id": "15fb79a0-2b8e-aadc-cc7b-8a3d9254ef44",
+  "name": "env.dataSource.oracle.password",
+  "value": "WCRMappLB1",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.channel => A4214.QCTA.SCY.2
+{
+  "id": "15fb79a1-8c33-d91d-d75f-a1e012020ec2",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.channel",
+  "value": "A4214.QCTA.SCY.2",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.hostName => mqqcta.prodlb.travp.net
+{
+  "id": "15fb79a2-e1dd-178c-b5ae-dd5969ba22b9",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.hostName",
+  "value": "mqqcta.prodlb.travp.net",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.port => 1414
+{
+  "id": "15fb79a4-4978-3510-6f9b-ec3ab1707529",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.port",
+  "value": "1414",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.password => 8SgyU3qk
+{
+  "id": "15fb79a5-9909-6426-ccf2-6a2adbdd9be1",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.password",
+  "value": "8SgyU3qk",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.queueManager	 => QCTA
+{
+  "id": "15fb79a6-e401-105c-5cb9-9450d345b967",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.queueManager\t",
+  "value": "QCTA",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.transportType => CLIENT
+{
+  "id": "15fb79a8-3e6d-2435-d79f-be7d66256404",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.transportType",
+  "value": "CLIENT",
+  "secure": false
+}
+
+env.jmsQueueConnectionFactory.TMQCFA.userName => s4214qt
+{
+  "id": "15fb79a9-a8e1-1bf6-a518-19b6ec16130d",
+  "name": "env.jmsQueueConnectionFactory.TMQCFA.userName",
+  "value": "s4214qt",
+  "secure": false
+}
+
+env.jmsQueue.TMWorkItemQueue.baseQueueManagerName => TMWorkItemQueue
+{
+  "id": "15fb79ab-0d7f-20cc-4ac8-438b882a4d69",
+  "name": "env.jmsQueue.TMWorkItemQueue.baseQueueManagerName",
+  "value": "TMWorkItemQueue",
+  "secure": false
+}
+
+env.jmsQueue.TMWorkItemQueue.baseQueueName => A4214QL.BISCBPLBS.TM.WORKMGMTENDORSEVENTS
+{
+  "id": "15fb79bf-1a9c-94f0-361e-0d148c8515e9",
+  "name": "env.jmsQueue.TMWorkItemQueue.baseQueueName",
+  "value": "A4214QL.BISCBPLBS.TM.WORKMGMTENDORSEVENTS",
+  "secure": false
+}
+
+env.authData.TMQueueCredentials.user => s4214qt
+{
+  "id": "15fb79ae-2db9-d3c2-c5a0-3f51a3712af6",
+  "name": "env.authData.TMQueueCredentials.user",
+  "value": "s4214qt",
+  "secure": false
+}
+
+env.authData.TMQueueCredentials.password => 8SgyU3qk
+{
+  "id": "15fb79af-b567-1a36-de11-59f31fc4c559",
+  "name": "env.authData.TMQueueCredentials.password",
+  "value": "8SgyU3qk",
+  "secure": false
+}
+
+
+PS C:\Users\jalam4\Travelers\Final_Automation\udclient\udclient> #>
+
+
+
+
+
+
+
+
+
+
+$serverFile = [System.IO.File]::OpenText("server.txt")
+
+$xl=New-Object -ComObject Excel.Application
+$wb=$xl.WorkBooks.Open('C:\Users\lchavhan\output.xls')
+$ws=$wb.WorkSheets.item(1)
+$ws.Cells.Item(1, 1) = "Softwares"
+$ws.Cells.Item(1,1).Font.Name = "Times New Roman"
+
+try {
+
+       $col = 1 
+       $count = 0
+        for() {
+                $server = $serverFile.ReadLine()
+                if ($server -eq $null) { break }
+                
+                $row = 1
+                $col = $col + 1
+                $ws.Cells.Item($row, $col) = $server
+                $ws.Cells.Item($row, $col).Font.Name = "Times New Roman"
+
+                $testSession = New-PSSession -Computer $server
+                $xl.Visible=$true
+
+                $row = $row + 1
+                if(($testSession))
+                           {
+                                  $softFile = [System.IO.File]::OpenText("software.txt")
+                                  try {
+                                                
+                                                for()
+                                                {
+                                $soft = $softFile.ReadLine()
+                                if ($soft -eq $null) { 
+                                    break
+                                }
+
+                                if($count -eq 0)
+                                {
+                                    $ws.Cells.Item($row,1)=$soft
+                                    $xl.Visible=$true
+                                    $ws.Cells.Item($row, 1).Font.Name = "Times New Roman"
+                                }
+                
+                   
+                                                       $Result = Get-WMIObject Win32_Installedwin32Program -Computer $server | Select-Object Name  
+
+                                                       if($Result.Name -eq $soft)
+                                                       {
+                                                              $xl.Visible=$true
+                                                              $ws.Cells.Item($row,$col)="Yes"
+                                    $ws.Cells.Item($row, $col).Font.Name = "Times New Roman"
+                                    $row = $row + 1
+                                                              write-host "Yes"
+                   
+                                                       }
+                                                       else
+                                                       {
+                                                              $xl.Visible=$true
+                                                              $ws.Cells.Item($row,$col)="No"
+                                    $ws.Cells.Item($row, $col).Font.Name = "Times New Roman"
+                                                              $row = $row + 1
+                                                              write-host "No"
+                                                       }
+                
+                                                }
+                        $count = 1
+                                         exit-PSSession
+                    }      
+
+                finally {
+                
+                    $softFile.Close()
+                    }
+    
+           }
+                 else
+                 {
+                           exit-PSSession
+                                    
+                                                              $xl.Visible=$true
+                                                              $ws.Cells.Item($row,$col)="Login Failed"
+                                    $ws.Cells.Item($row, $col).Font.Name = "Times New Roman"
+                                                              $row = $row + 1
+                 }
+              }
+               
+    }
+
+       finally {
+        
+        $serverFile.Close()
+} 
