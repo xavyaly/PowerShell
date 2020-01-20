@@ -1,0 +1,20 @@
+In Linux we called command and in Powershell we call cmdlets
+
+In Mac:
+cd ./		: 	Move to different drive
+dir		: 	list all directories
+clear	: 	clear the screen
+ifconfig	: 	List all IPs
+
+Note:
+Powershell is an Object based scripting language
+
+4 commands:
+Get-Help			: 	Help File 
+Get-Command	: 	List all cmdlets
+Show-Command	: 	Didn’t work on Mac
+Alias			: 	Later
+
+Next Commands:
+Get-Host				: 	Powershell Version
+Update-Help -Force  	:  	Every time you need to run this command

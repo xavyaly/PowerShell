@@ -1,0 +1,14 @@
+Powershell:
+Def: PowerShell is a task-based command-line shell and scripting language built on . NET. PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems (Linux, macOS, and Windows) and processes. PowerShell commands let you manage computers from the command line.
+
+How to start Powershell in windows:
+	Start -> powershell -> powershell terminal open -> run the cmdlets
+
+How to start Powershell in Mac:
+	Terminal -> powershell -> powershell terminal open -> run the cmdlets
+
+Execute powershell in Ubuntu Machine:
+	Create an AWS Ubuntu Machine 
+	Install Powershell in ubuntu 16.04:
+		https://vitux.com/how-to-install-microsoft-powershell-on-ubuntu/
+

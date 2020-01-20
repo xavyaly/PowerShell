@@ -1,0 +1,33 @@
+In Mac:
+Get-Help Copy-Item	: 	Provide synopsis, commandlet, Important to learn how we can read the syntax
+
+Copy a file/folder from one place to another:
+Copy-Item -Path /Users/javedalam/Documents/Extra/x2.txt .
+Copy-Item /Users/javedalam/Documents/Extra/x2.txt /Users/javedalam/Documents/DevOpsLabs/PowerShell/
+Copy-Item /Users/javedalam/Documents/Extra/x2.txt -Destination /Users/javedalam/Documents/DevOpsLabs/PowerShell/                                             
+
+
+List the process in detailed:
+Get-Process -Id <ID_NO>				: 	List the process
+Stop-Process	<ID_NO>					: 	Stop the running process 
+Get-Process powershell                                                                                   
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)     Id  SI ProcessName                                                                                                
+ ------    -----      -----     ------     --  -- -----------                                                                                                
+      0     0.00      58.31     336.99  13059 425 powershell                                                                                                 
+      0     0.00     120.29   1,257.51  13125 453 powershell  
+
+get-help Get-Process -Detailed			: 	Detailed with examples
+get-help Get-Process -Full
+get-help Get-Process -Examples
+get-help Get-Process -Online				:	Online Help
+get-help Get-Process -ShowWindow		: 	Open in window
+
+
+Basic Commandlets:
+Clear-Host			:		Clear the screen same as Linux ($ clear)
+Get-Process			:		List all process
+Stop-Process			: 		Stop the process
+Get-Service			:		List the status of services in powershell like running, stopped and so on
+
+
