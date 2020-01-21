@@ -1,0 +1,36 @@
+Steps to create an AWS EC2 Windows Machine to execute all Powershell cmdlets:
+	Click on Launch Instance
+	Click on “Free tier only”
+	Select an AMI ending with “*e9”
+	Choose Instance Type: “t2.xlarge”
+	Click Next
+	Select Subnet ending with “*ff8”
+	Select “Protect against accidental termination”
+	Click Next
+	Click Next
+	Add Tags: Name -> PS-Windows
+	Select an existing security group: “sg-0ed14060”
+	Click on Review & Launch
+	Click on Launch
+	Choose an existing key pair called devopstrainer10 (*.pem file)
+	Click on “Launch Instance”
+	Windows Machine: “0c76f06e47428a110”
+
+How to connect AWS EC2 Windows machine from Mac:
+	Select the machine like “Win-Powershell-Lab”
+	Click on Connect at the TOP
+	Click on Download Remote Desktop File: Click on Save
+	Click on Get Password
+	Paste the contents of the Key Pair: “devopstrainer10.pem”
+	Click on Decrypt Password
+	Credentials: Administrator/******
+	Install “Microsoft Remote Desktop 10” from App Store which is free 
+	Double Click on “ec2-13-233-159-49.ap-south-1.compute.amazonaws.com.rdp”
+	Click on Continue
+	Populate the Credentials
+	Click on Continue
+	Done
+	Now we can start playing with Windows Machine
+
+Link to connect an AWS EC2 Windows Machine from MAC:
+	https://thebackroomtech.com/2018/11/08/how-to-connect-to-a-windows-ec2-instance-from-mac/
