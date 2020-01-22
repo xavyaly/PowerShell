@@ -1,0 +1,7 @@
+ #Basic Cmdlets
+
+Get-Process  # list all process
+Clear-Host   # clear the screen same like unix
+Stop-Process # to stop any process
+Get-Service  # list the status of services in PS like running, stopped and so on 
+

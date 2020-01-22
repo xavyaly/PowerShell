@@ -1,0 +1,31 @@
+Get-Item  # Fetch the full path only
+Get-Item -Path 'C:\Program Files\Amazon'
+Get-Item -Path 'C:\Program Files' -Force  # -force parameter used to see the hidden files
+
+Get-ChildItem 'C:\Program Files'       # List all files & directories like dir in cmd prompt
+Get-ChildItem -Path 'C:\Program Files' # List all files & directories like dir in cmd prompt
+Get-ChildItem -Path 'C:\Program Files' -Recurse         # List all interior files and folders
+Get-ChildItem -Path 'C:\Program Files' -Recurse -Force  # List all hidden files and folders
+
+New-Item -Path 'C:\PowerShell' -name mytest -ItemType directory  # used to create a directory
+Get-Item 'C:\Program Files\mytest'                               # List the created directory
+New-Item -Path C:\PowerShell -name myfile.txt -ItemType file     # used to create a file
+Get-Item C:\PowerShell\myfile.txt                                # List the created file
+
+Test-Path C:\PowerShell   # return True/False
+
+Remove-Item 'C:\Program Files\mytest' 
+
+New-Item -Path C:\PowerShell -name myfile-1.txt -ItemType file -Value "Hello I am a DevOps Trainer"  # Write into a file
+Get-Content -Path C:\PowerShell\myfile-1.txt  # Read the contents of a file
+Add-Content -Path C:\PowerShell\myfile-1.txt -Value "\n Hello I am teaching 6th Batch for DevOps" # Append into a file
+Get-Content -Path C:\PowerShell\myfile-1.txt  # Read the contents of a file
+Set-Content -Path C:\PowerShell\myfile-1.txt -Value "Remove the previous content and Add the latest content" # overwrite into a file
+Get-Content -Path C:\PowerShell\myfile-1.txt  # Read the contents of a file
+
+Copy-Item -Path C:\PowerShell\myfile-1.txt -Destination C:\PowerShell\myfile-2.txt
+Get-Content -Path C:\PowerShell\myfile-1.txt  # Read the contents of a file
+Get-Content -Path C:\PowerShell\myfile-2.txt  # Read the contents of a file
+
+ 
+

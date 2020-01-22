@@ -1,0 +1,7 @@
+Get-Alias                     # List all aliases
+Get-ChildItem                 # Children items
+Set-Alias list Get-ChildItem  # list is the new alias name for get-childitem
+list                          # Children items
+Get-Alias -name list          # fetch the details whose alias setup by us
+ 
+
