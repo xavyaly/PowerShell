@@ -1,0 +1,13 @@
+ # "$" Signifies that next term is a variable
+
+$MyVar="Hello World !!!"   # Declaring and assigning value to a variable
+$MyVar             # Getting the value from variable
+
+New-Variable -Name var -Value 200  # create a new variable and assign the value
+$var       # gettting the value from variable
+New-Variable -Name var -Value 200  # throw an error, you can't create a new with same name and value
+New-Variable -Name var -Value 500  # throw an error, you can't create a new with same name and value
+Set-Variable -Name var -Value 1000 # set the new variable
+ 
+ 
+

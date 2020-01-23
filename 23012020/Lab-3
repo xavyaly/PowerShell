@@ -1,0 +1,3 @@
+ Get-PSDrive    # List all drives available on my system
+regedit        # a pop up window will open  
+

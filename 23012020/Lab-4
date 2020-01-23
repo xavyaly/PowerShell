@@ -1,0 +1,17 @@
+ # Pipe
+
+Get-Process 
+Start-Process calc        # start the calculator
+Get-Process -Name calc | Stop-Process  # get and stop the process for calc
+
+Get-Service               # list out all service in cmd prompt
+Get-Service | Out-File -FilePath C:\PowerShell\service.txt   # move all services outfile in a file, important
+Get-Content C:\PowerShell\service.txt   # list all services in cmd prompt
+Get-Service > C:\PowerShell\service-1.txt
+Get-Service >> C:\PowerShell\service-1.txt
+
+Get-Process
+Get-Process | Out-GridView
+
+ 
+

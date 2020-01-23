@@ -1,0 +1,8 @@
+ Get-Alias      # List all aliases
+Get-ChildItem  # List the children items
+Set-Alias x Get-ChildItem     # Set the alias
+x              # Work same as get-childitem
+
+Get-Alias -Name x
+Get-Alias 
+

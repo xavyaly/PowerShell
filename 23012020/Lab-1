@@ -1,0 +1,8 @@
+ Get-Process                       # to see the process
+Get-Process -Id 548               # to see the specific process
+Get-Help Get-Process -detailed    # download if not present, list all commands in detailed
+Get-Help Get-Process -Full
+Get-Help Get-Process -examples
+Get-Help Get-Process -online
+Get-Help Get-Process -ShowWindow 
+

@@ -1,0 +1,13 @@
+ # Formatting
+
+Get-Service
+Get-Service | Format-List    # console output in list
+Get-Service | Format-Wide
+Get-Service | Format-Table 
+Get-Service | Format-Table -AutoSize
+
+# gci ??
+gci C:\PowerShell\service-1.txt | Format-List
+gci C:\PowerShell\service-1.txt | Format-Wide
+gci C:\PowerShell\service-1.txt | Format-Table -AutoSize 
+
