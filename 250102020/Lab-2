@@ -1,0 +1,11 @@
+ $i=5
+$i
+
+Write-Host "The value for i is: " $i
+
+Write-Host 'The value for i is: ' $i
+
+Get-Help about_Quoting_Rules
+
+Get-Help about_Automatic_Variables 
+

@@ -1,0 +1,21 @@
+ # Unable re-set the stong data type variable
+
+[int]$b=2
+$b
+
+[int]$b="abc"
+
+# Getting Input [Read-Host]
+$Name=Read-Host "Enter Name"
+$Name
+
+Write-Host "Your Name is : " $Name
+$?
+
+Write-Warning "Do Not Touch Mouse...!!"
+
+Write-Error "Can't Proceed..."
+
+$^: Give the previous command only
+$?: Check the previous command run successfully or not (True | False) 
+

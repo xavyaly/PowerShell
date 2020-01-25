@@ -1,0 +1,24 @@
+ # Export
+
+# Exporting data to different file format
+
+Get-Service > C:\PowerShell\25-01-2020\service-1.txt
+
+Get-Process
+Get-Process | Export-Clixml -Path C:\PowerShell\25-01-2020\process.xml
+
+Get-Service | Out-File -FilePath C:\PowerShell\25-01-2020\service.txt
+
+Get-Volume >> C:\PowerShell\25-01-2020\volumeinfo.txt
+
+Get-Service | Out-GridView  # A popup window will open
+
+Export-Csv 
+Get-Service | Export-Csv -Path C:\PowerShell\25-01-2020\service.csv
+$?  # To check the previous execution
+
+# Convert CSV to XML
+Import-Csv -Path C:\PowerShell\25-01-2020\service.csv | Export-Clixml -Path C:\PowerShell\25-01-2020\csvtoxml.xml
+$?
+
+

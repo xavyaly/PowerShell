@@ -1,0 +1,24 @@
+ Get-Process | Get-Member
+Get-Process | Gm -MemberType Property # gm indicates get member
+Get-Process | Gm -MemberType Method
+
+$MyVar= Get-Service WinRM
+$MyVar
+
+$MyVar | gm
+$MyVar.Status
+$MyVar.Stop
+$MyVar.Status
+$MyVar.Refresh()
+$MyVar.Status
+
+Get-Service | select -Property Name,Status
+Get-Service | gm
+Get-Service | select -Property Name, Status, ServicesDependedOn, MachineName
+
+Get-Service | sort -Property Name -Descending
+
+Get-ChildItem C:\PowerShell | select -Property Name | sort -Property Name -Descending
+
+ 
+
