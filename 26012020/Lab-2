@@ -1,0 +1,10 @@
+# Global variable
+
+$Global:gloVar=2
+$gloVar
+
+# Local Variable
+
+$locVar=3
+$locVar
+

@@ -1,0 +1,9 @@
+# Policy
+# Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7
+
+clear
+
+Get-ExecutionPolicy   # RemoteSigned
+
+Set-ExecutionPolicy RemoteSigned
+

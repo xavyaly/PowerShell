@@ -1,0 +1,39 @@
+# Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7
+# Syntax:
+
+function <name> {
+  param ([type]$parameter1[,[type]$parameter2])
+  <statement list>
+}
+
+# sample syntax
+function <name> [([type]$parameter1[,[type]$parameter2])] {
+  <statement list>
+}
+
+#Example
+Function Add-Numbers($one, $two) {
+    $one + $two
+}
+
+
+# Example
+
+function Get-SmallFiles {
+  Param($Size)
+  Get-ChildItem $HOME | Where-Object {
+    $_.Length -lt $Size -and !$_.PSIsContainer
+  }
+}
+
+Get-SmallFiles -Size 50
+
+
+# Example
+
+function Get-Pipeline
+{
+  process {"The value is: $_"}
+}
+
+1,2,4 | Get-Pipeline

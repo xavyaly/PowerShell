@@ -1,0 +1,19 @@
+Get-Date
+(Get-Date) -le '10-10-2017'
+
+# use of alias
+Get-ChildItem -Path C:\PowerShell\25-01-2020\service.txt -Filter *.* | Sort-Object -Property Length -Descending
+gci -Path C:\PowerShell\25-01-2020\service.txt -Filter *.* | Sort-Object -Property Length -Descending
+Get-Alias
+
+# 
+Stop-Process -Name (Get-Content "C:\PowerShell\25-01-2020\service.txt")
+
+# Fetch out with the help of Name
+gci | where {$_.Name -like "*<string>*"}
+gci C:\PowerShell\25-01-2020\service.txt | where { $_.Name -like "*<string>*" }
+
+# Fetch out with the help of Type
+gci | where {$_.Extension -eq ".exe"}
+
+Get-ChildItem 

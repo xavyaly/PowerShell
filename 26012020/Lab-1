@@ -1,0 +1,14 @@
+# Export, Import & Compare 
+
+Get-Process
+Get-Process | Export-Clixml -Path C:\PowerShell\25-01-2020\process.xml
+
+Export-Csv 
+Get-Service | Export-Csv -Path C:\PowerShell\25-01-2020\service.csv
+$?  # To check the previous execution
+
+# Convert CSV to XML
+Import-Csv -Path C:\PowerShell\25-01-2020\service.csv | Export-Clixml -Path C:\PowerShell\25-01-2020\csvtoxml.xml
+$?
+
+Compare-Object -ReferenceObject (Import-Clixml -Path C:\PowerShell\25-01-2020\process.xml) -DifferenceObject (Get-Process) -Property Name 
