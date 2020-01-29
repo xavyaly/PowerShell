@@ -1,0 +1,26 @@
+ #switch
+
+while(($inp = Read-Host -Prompt "Select a command") -ne "Q"){
+switch($inp){
+   L {"File will be deleted"}
+   A {"File will be displayed"}
+   R {"File will be write protected"}
+   Q {"End"}
+   default {"Invalid entry"}
+   }
+}
+
+#ex
+switch ("jd")
+{
+    1 {"It is one."; Break}
+    2 {"It is two."; Break}
+    3 {"It is three."; Break}
+    4 {"It is four."; Break}
+    "fo*" {"That's too many."}
+    Default {
+        "No matches"
+    }
+}
+ 
+

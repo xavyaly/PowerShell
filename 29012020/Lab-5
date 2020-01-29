@@ -1,0 +1,37 @@
+ #for-each-loop
+
+$letterArray = "a","b","c","d"
+foreach ($letter in $letterArray)
+{
+  Write-Host $letter
+}
+
+#ex
+$ary=1..5
+foreach($i in $ary)
+{
+if($i -eq 3)
+{break}
+$i
+}
+
+#ex
+Get-ChildItem
+foreach ($file in Get-ChildItem)
+{
+  Write-Host $file
+}
+
+#ex
+
+foreach ($file in "C:\PowerShell\29-01-2020")
+{
+  if ($file.length -gt 0KB)
+  {
+    Write-Host $file
+  }
+}
+
+
+#Ref: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7 
+

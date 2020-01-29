@@ -1,0 +1,23 @@
+ #for loop
+
+$i=0
+for(;$i -le 5;)
+{
+"`$i is equals to $i"
+$i++
+}
+
+#ex
+For ($i=0; $i -le 10; $i++) {
+    "10 * $i = " + (10 * $i)
+    }
+
+
+#ex
+$colors = @("Red","Orange","Yellow","Green","Blue","Indigo","Violet")
+For ($i=0; $i -lt $colors.Length; $i++) {
+    $colors[$i]
+    }
+
+ 
+

@@ -1,0 +1,22 @@
+ # while
+
+$i=0
+while($i -lt 5)
+{"`$i equals $i.This is less than 5"
+$i++}
+
+#ex
+while(($inp = Read-Host -Prompt "Select a command") -ne "Q"){
+switch($inp){
+   L {"File will be deleted"}
+   A {"File will be displayed"}
+   R {"File will be write protected"}
+   Q {"End"}
+   default {"Invalid entry"}
+   }
+}
+
+#Reference: https://4sysops.com/archives/powershell-loops-for-foreach-while-do-until-continue-break/
+
+ 
+
