@@ -1,0 +1,5 @@
+#operation in an array
+$a=@(2,3,4)
+$b=@(7,8,9)
+$z=$a+$b
+$z

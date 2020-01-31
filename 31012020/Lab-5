@@ -1,0 +1,4 @@
+#Reverse an array
+$a
+[Array]::Reverse($a)
+$a

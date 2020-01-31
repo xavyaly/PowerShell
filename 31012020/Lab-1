@@ -1,0 +1,3 @@
+#foreach loop
+$a=22,5,10,8,12,9,80
+foreach($i in $a){$i}

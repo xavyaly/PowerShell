@@ -1,0 +1,9 @@
+#More operators
+2+2
+"Hello" + "Powershell"
+"hello" + 2
+2 + "Hello"
+"2" + "Hello"
+"Hello" - "Powershell"
+2*2
+"Hello"*2

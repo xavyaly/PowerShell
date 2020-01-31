@@ -1,0 +1,34 @@
+#Reg Ex: Regular Expression
+Write-Host "Hello World!!"
+
+Write-Host "--- Use -match, -notmatch, -cmacth, -imatch, -replace to identity, string patterns" -ForegroundColor Green
+
+
+'Power Shell' -match 'hel'  # true
+"Power Shell" -match "she"
+"Power Shell" -notmatch "shhe"
+"Power Shell" -cmatch "she"
+"Power Shell" -cmatch "She"  # case sensitive
+"Power Shell" -imatch "she"  # case insensitive
+"Power Shell" -replace "Shell","Java"   # Power Java
+
+Write-Host "--- RegEx Characters: ^ . [] - ? + * p P w W s S d D {} $" -ForegroundColor Green
+
+# ^: start
+# $: Ending
+"Power Shell" -match "^P"
+"no money no home" -replace "^no"," "
+
+"Power Shell" -match 'l$'
+
+'rat' -match 'r.t'
+'rat' -match 'r..t'
+
+'Power Shell' -match 'sh..l'
+'Power Shell' -match 'sh.l'
+'Power Shell' -match 'sh...l'
+
+'Power Shell' -match 'P[omn]wer'
+'United States Of America' -match 'U[a-z]'
+'Ziggy stardust' -match 'Zigg[x-z] Star'
+

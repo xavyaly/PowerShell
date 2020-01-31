@@ -1,0 +1,7 @@
+#Hash Table
+$EmpNum=@{"X"=123;"Y"=232;"Z"=213}
+$EmpNum.Keys
+$EmpNum.Values
+$EmpNum.Remove("X")
+$EmpNum
+
